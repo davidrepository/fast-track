@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import { Button } from "./components";
+import { OverviewScreen } from "./screens";
 
 function App() {
+  const [screen, setScreen] = useState<"overview">("overview");
+
   return (
-    <div className="App">
-      <div className="p-4 bg-blue-500">INIT</div>
+    <div className="min-h-screen bg-gray-200 p-6 flex flex-col gap-12 items-center">
+      <Button variant="primary">Switch Screen</Button>
+
+      {screen === "overview" && <OverviewScreen />}
     </div>
   );
 }
