@@ -1,5 +1,5 @@
 import axios from "axios";
-import { OverviewData } from "../types";
+import { OverviewData, InsightsData } from "../types";
 
 const API_BASE = "http://localhost:4000";
 const ROUTES = {
@@ -10,6 +10,13 @@ const ROUTES = {
 export const fetchOverview = async (): Promise<OverviewData> => {
   const response = await axios.get<OverviewData>(
     `${API_BASE}${ROUTES.OVERVIEW}`
+  );
+  return response.data;
+};
+
+export const fetchInsights = async (): Promise<InsightsData> => {
+  const response = await axios.get<InsightsData>(
+    `${API_BASE}${ROUTES.INSIGHTS}`
   );
   return response.data;
 };

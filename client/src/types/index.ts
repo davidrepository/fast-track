@@ -4,3 +4,14 @@ export interface OverviewData {
   status: "Critical" | "Average" | "Strong";
   comparative: string;
 }
+
+export interface Insight {
+  title: string;
+  value: number;
+  trend: number[];
+}
+
+export interface InsightsData {
+  title: string;
+  insights: Insight[];
+}
